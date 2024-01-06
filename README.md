@@ -1,75 +1,97 @@
-Project Title
-Brief description of your project.
-
-Table of Contents
-Introduction
-Features
-Prerequisites
-Installation
-Usage
-API Endpoints
-Testing
-Technologies Used
-Project Structure
-Contributing
-License
-Contact
-Introduction
-Provide a brief overview of your project, its purpose, and the problems it aims to solve. Mention any key features or functionalities.
-
-Features
-List the main features of your application.
-
-Feature 1
-Feature 2
-...
-Prerequisites
-Outline any prerequisites or dependencies that users need to install or have before using your project.
-
-Installation
-Provide step-by-step instructions on how to install and set up your project locally.
-
-bash
-Copy code
-
 # Clone the repository
 
-git clone https://github.com/your-username/your-repo.git
+gh repo clone kamarajugadda-pavan-kumar/speer
 
 # Navigate to the project directory
 
-cd your-repo
+cd speer
 
 # Install dependencies
 
 npm install
-Usage
-Explain how users can use your application. Include any necessary configuration, environment variables, or setup instructions.
 
-API Endpoints
+#congigure .env file
+configure your database in .env file 
+
+```
+# postgres database connection 
+host = your_host
+port = your_port
+database = your_database_name
+user = Your_username
+password = your_password
+
+# jwt secret
+jwtSecret = jhdfksdjhfklsdhfsdfhds3543ds4fsdajfsdhkfjsdghkfgsdlkghf
+```
+
+# navigate to src folder
+```
+cd src
+node server.js
+```
+This should start the server
+
+
+
+Copy code
+## API Endpoints
+
 List and briefly describe the API endpoints available in your project.
 
-POST /api/auth/signup: Create a new user account.
-POST /api/auth/login: Log in to an existing user account and receive an access token.
-...
-Testing
-Provide information on how to run tests for your application.
+### Authentication Endpoints
 
-Technologies Used
-List the main technologies, frameworks, and libraries used in your project.
+- `POST /api/auth/signup`: Create a new user account.
+- `POST /api/auth/login`: Log in to an existing user account and receive an access token.
+
+### Note Endpoints
+
+- `GET /api/notes`: Get a list of all notes for the authenticated user.
+- `GET /api/notes/:id`: Get a note by ID for the authenticated user.
+- `POST /api/notes`: Create a new note for the authenticated user.
+- `PUT /api/notes/:id`: Update an existing note by ID for the authenticated user.
+- `DELETE /api/notes/:id`: Delete a note by ID for the authenticated user.
+- `POST /api/notes/:id/share`: Share a note with another user for the authenticated user.
+- `GET /api/search?q=:query`: Search for notes based on keywords for the authenticated user.
+
+All endpoints require authentication using the provided access token. The `authMiddleware` is implemented to ensure secure access to the protected routes.
+
+#postman workspace
+Functional testing of the end points is done here in postman. You can check the link https://www.postman.com/grey-comet-213189/workspace/speer/collection/23792729-f3c6475d-7049-4aa3-b5c9-988919ce8b6a
+
+
+
+#Technologies Used
 
 Node.js
 Express.js
 PostgreSQL
 ...
 Project Structure
-Explain the organization of your project's codebase. Provide details on the structure of folders, key files, and their purposes.
+src
+├─ .env
+├─ app.js
+├─ controllers
+│  ├─ notesController.js
+│  └─ userController.js
+├─ middleware
+│  ├─ authMiddleware.js
+│  └─ rateLimitMiddleware.js
+├─ modals
+│  ├─ notesModel.js
+│  └─ userModel.js
+├─ routes
+│  ├─ noteRoutes.js
+│  ├─ userRoutes.js
+│  └─ web.js
+├─ server.js
+├─ services
+│  ├─ createTables.sql
+│  ├─ databaseService.js
+│  ├─ gracefulShutdownService.js
+│  └─ initializeService.js
+└─ tests
+   ├─ end-to-end
+   ├─ integration
+   └─ unit
 
-Contributing
-Outline guidelines for others who want to contribute to your project. Include information on how to submit issues, propose new features, or make pull requests.
-
-License
-Specify the license under which your project is released.
-
-Contact
-Provide contact information in case users have questions or want to get in touch with you.
