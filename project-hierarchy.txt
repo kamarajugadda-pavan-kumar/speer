@@ -1,0 +1,26 @@
+src
+├─ .env
+├─ app.js
+├─ controllers
+│  ├─ notesController.js
+│  └─ userController.js
+├─ middleware
+│  ├─ authMiddleware.js
+│  └─ rateLimitMiddleware.js
+├─ modals
+│  ├─ notesModel.js
+│  └─ userModel.js
+├─ routes
+│  ├─ noteRoutes.js
+│  ├─ userRoutes.js
+│  └─ web.js
+├─ server.js
+├─ services
+│  ├─ createTables.sql
+│  ├─ databaseService.js
+│  ├─ gracefulShutdownService.js
+│  └─ initializeService.js
+└─ tests
+   ├─ end-to-end
+   ├─ integration
+   └─ unit

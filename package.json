@@ -1,0 +1,26 @@
+{
+  "name": "speer",
+  "version": "1.0.0",
+  "description": "speer backend assessment",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest --testPathIgnorePatterns='/node_modules/'"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "author": "pavan kumar kamarajugadda",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3"
+  }
+}
